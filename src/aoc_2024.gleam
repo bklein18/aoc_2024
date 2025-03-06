@@ -1,5 +1,6 @@
 import day1/day1
 import day2/day2
+import day3/day3
 import gleam/int
 import gleam/io
 import gleam/result
@@ -27,4 +28,15 @@ pub fn main() {
   io.println(int.to_string(day2.day2_part1(day2_contents)))
   io.print("Safe lists with damper: ")
   io.println(int.to_string(day2.day2_part2(day2_contents)))
+
+  let day3_input_path = "./src/day3/day3_input.txt"
+  let day3_contents =
+    simplifile.read(day3_input_path)
+    |> result.unwrap("")
+
+  io.println("========== Day 3 ==========")
+  io.print("Parsed result: ")
+  io.println(int.to_string(day3.day3_part1(day3_contents)))
+  io.print("Parsed result with do / don't ")
+  io.println(int.to_string(day3.day3_part2(day3_contents)))
 }
