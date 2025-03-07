@@ -1,6 +1,7 @@
 import day1/day1
 import day2/day2
 import day3/day3
+import day4/day4
 import gleam/int
 import gleam/io
 import gleam/result
@@ -39,4 +40,15 @@ pub fn main() {
   io.println(int.to_string(day3.day3_part1(day3_contents)))
   io.print("Parsed result with do / don't ")
   io.println(int.to_string(day3.day3_part2(day3_contents)))
+
+  let day4_input_path = "./src/day4/day4_input.txt"
+  let day4_contents =
+    simplifile.read(day4_input_path)
+    |> result.unwrap("")
+
+  io.println("========== Day 4 ==========")
+  io.print("Number of Xmas's: ")
+  io.println(int.to_string(day4.day4_part1(day4_contents)))
+  io.print("Number of X-mas's: ")
+  io.println(int.to_string(day4.day4_part2(day4_contents)))
 }
