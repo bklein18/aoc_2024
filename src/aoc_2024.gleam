@@ -2,6 +2,8 @@ import day1/day1
 import day2/day2
 import day3/day3
 import day4/day4
+import day5/day5
+import day6/day6
 import gleam/int
 import gleam/io
 import gleam/result
@@ -51,4 +53,27 @@ pub fn main() {
   io.println(int.to_string(day4.day4_part1(day4_contents)))
   io.print("Number of X-mas's: ")
   io.println(int.to_string(day4.day4_part2(day4_contents)))
+
+  let day5_input_path = "./src/day5/day5_input.txt"
+  let day5_contents =
+    simplifile.read(day5_input_path)
+    |> result.unwrap("")
+
+  io.println("========== Day 5 ==========")
+  io.print("Sum of middle valid rows: ")
+  io.println(int.to_string(day5.day5_part1(day5_contents)))
+  io.print("Sum of middle invalid rows: ")
+  io.println(int.to_string(day5.day5_part2(day5_contents)))
+
+  let day6_input_path = "./src/day6/day6_input.txt"
+  let _day6_contents =
+    simplifile.read(day6_input_path)
+    |> result.unwrap("")
+
+  io.println("========== Day 6 ==========")
+  // leaving these commented because they take a *long* time to work. They do work, they are just really inefficient
+  // io.print("Spaces visited by guard: ")
+  // io.println(int.to_string(day6.day6_part1(day6_contents)))
+  // io.print("Paradox spaces: ")
+  // io.println(int.to_string(day6.day6_part2(day6_contents)))
 }
